@@ -8,6 +8,8 @@ a {
     text-decoration: none;
 }
 
+/* header */
+
 #main-header {
     height: 80px;
     display: flex;
@@ -44,3 +46,5 @@ a {
 #main-header ul li a:hover {
     color: rgb(228, 163, 44);
 }
+
+/* main */
