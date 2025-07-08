@@ -82,3 +82,103 @@ p { font-size: 1.1em; }     /* 부모 폰트 기준 1.1배 */
 | `rem` | 루트 폰트 기준 일관된 스케일링 |
 
 > 📌 반응형 + 접근성 + 유지보수 용이성을 위해 `rem`과 `em`을 적절히 활용하고, `px`는 세밀한 컨트롤에 사용하세요.
+
+</br>
+
+## 📱 CSS Media Queries 정리
+
+---
+
+## ✨ Media Query란?
+
+* 특정 조건(화면 크기, 방향, 해상도, 테마 등)에 따라 **다른 CSS 규칙을 적용**할 수 있는 CSS 기능입니다.
+* 반응형 웹 디자인(Responsive Web Design)의 핵심 도구입니다.
+
+```css
+@media (max-width: 600px) {
+  body {
+    background-color: lightblue;
+  }
+}
+```
+
+---
+
+## 🧰 주요 활용
+
+| 용도             | 예시                    |
+| -------------- | --------------------- |
+| 📐 화면 크기별 레이아웃 | 모바일, 태블릿, 데스크탑 대응     |
+| 📲 모바일 퍼스트 디자인 | 작은 화면부터 설계 후 점점 확장    |
+| 🎨 테마 지원       | 다크모드, 고대비 모드 등        |
+| 📺 기기 특성별 대응   | orientation, 해상도 조건 등 |
+
+---
+
+## 📝 문법
+
+### 기본 문법
+
+```css
+@media media-type and (condition) {
+  /* CSS rules */
+}
+```
+
+### 조건 예시
+
+| 조건                     | 의미         |
+| ---------------------- | ---------- |
+| `max-width`            | 뷰포트의 최대 너비 |
+| `min-width`            | 뷰포트의 최소 너비 |
+| `orientation`          | 가로/세로 방향   |
+| `prefers-color-scheme` | 다크/라이트 테마  |
+| `resolution`           | 화면 해상도     |
+
+---
+
+## 🔷 실전 예제
+
+```css
+/* 모바일 */
+@media (max-width: 600px) {
+  body { font-size: 14px; }
+}
+
+/* 태블릿 */
+@media (min-width: 601px) and (max-width: 1024px) {
+  body { font-size: 16px; }
+}
+
+/* 데스크탑 */
+@media (min-width: 1025px) {
+  body { font-size: 18px; }
+}
+
+/* 다크 모드 */
+@media (prefers-color-scheme: dark) {
+  body { background-color: #111; color: #eee; }
+}
+```
+
+---
+
+## 🌟 최신 트렌드와 대안
+
+* **Container Queries**: 부모 컨테이너 크기에 따라 스타일 변경 (모듈 단위 반응형)
+* **clamp(), min(), max()**: CSS 함수로 더 유연하게 크기 제어
+* **Fluid Typography**: viewport 단위를 활용한 유동적인 글자 크기
+
+---
+
+## ✅ 요약
+
+| 특징       | 설명                                    |
+| -------- | ------------------------------------- |
+| 🎯 핵심 역할 | 반응형 웹 디자인 구현                          |
+| 🖥️ 기준   | 뷰포트, 기기 특성에 따른 조건                     |
+| 🛠️ 사용처  | 전체 레이아웃, 테마, 해상도 대응                   |
+| 🔷 한계    | 모듈 단위 대응은 어려움 → Container Queries로 보완 |
+
+> 📌 **미디어쿼리는 여전히 웹에서 중요한 도구이며, 최신 기술과 함께 사용하면 더 유연하고 강력한 반응형 디자인이 가능하다!**
+
