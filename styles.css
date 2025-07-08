@@ -107,3 +107,13 @@ main h1 {
 .btn:hover {
     background-color: rgb(221, 134, 34);
 }
+
+
+/* media query -> 초기 css 이후 나와야 함 (계단식 종속) */
+
+@media (max-width: 768px) {
+    #latest-products ul {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+}
