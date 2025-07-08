@@ -111,7 +111,15 @@ main h1 {
 
 /* media query -> 초기 css 이후 나와야 함 (계단식 종속) */
 
-@media (max-width: 768px) {
+@media (max-width: 48rem) {
+    #main-header nav {
+        display: none;
+    }
+
+    main h1 {
+        font-size: 1.5rem;
+    }
+
     #latest-products ul {
         display: grid;
         grid-template-columns: 1fr;
